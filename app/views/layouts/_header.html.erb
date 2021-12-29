@@ -1,5 +1,5 @@
-<nav class="navbar navbar-inverse navbar-static-top">
-
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#expanded-menu" aria-expanded=" false">
@@ -11,26 +11,20 @@
       <%= link_to 'Contact List', root_url, class: 'navbar-brand' %>
     </div>
 
-  <!-- Conteudo exibido em telas maiores e que serao escondidos em telas menores -->
-  <div class="collapse navbar-collapse" id="expanded-menu">
-    <ul class="nav navbar-nav">
-  
-        <li class="active">
-          <%= link_to 'Nova Conta', "#" %>
-        </li>
-     
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-
+    <div class="collapse navbar-collpase" id="expanded-menu">
+    
+      <ul class="nav navbar-nav">
         <li>
-            <%= link_to 'Entrar', "#" %>
-        /li>
+          <a href="#">Nova Conta</a>
+        </li>
+      </ul>
 
-    </ul>
-
-  </div>
-
-  </div>
-
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+         <%= link_to 'Entrar', '#' %>
+        </li>
+      </ul>
+    
+    </div>
 </nav>
+
