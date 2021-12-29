@@ -1,30 +1,21 @@
 <nav class="navbar navbar-dark bg-dark">
   <!-- Navbar content -->
   <div class="container-fluid">
+
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#expanded-menu" aria-expanded=" false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Contact List', root_url, class: 'navbar-brand' %>
+      <%= link_to 'Contact List', root_url, class: 'navbar-brand', style: "color: #696969"%> 
+      <%= link_to 'Nova Conta', "#", class: 'navbar-brand' %>
+      
     </div>
 
-    <div class="collapse navbar-collpase" id="expanded-menu">
-    
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#">Nova Conta</a>
-        </li>
-      </ul>
-
+    <div class="navbar-header">
       <ul class="nav navbar-nav navbar-right">
         <li>
-         <%= link_to 'Entrar', '#' %>
+          <button type="button" class="btn btn-outline-secondary">Entrar</button>
         </li>
       </ul>
-    
     </div>
+
+  </div>
 </nav>
 
