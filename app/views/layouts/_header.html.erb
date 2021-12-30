@@ -4,17 +4,31 @@
 
     <div class="navbar-header">
       <%= link_to 'Contact List', root_url, class: 'navbar-brand', style: "color: #696969"%> 
-      <%= link_to 'Nova Conta', new_user_path, class: 'navbar-brand' %>
+      <% if !user_signed_in? %>
+        <%= link_to 'Nova Conta', new_user_path, class: 'navbar-brand' %>
+      <% end %>
       
     </div>
 
-    <div class="navbar-header">
-      <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-header navbar-right">
+      <% if !user_signed_in? %>
         <li>
-          <button type="button" class="btn btn-outline-secondary">Entrar</button>
+          <%= link_to 'Entrar', entrar_path, class: "btn btn-outline-secondary"%>
         </li>
-      </ul>
-    </div>
+      <% else %>
+          <li class="nav-item dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+             Olá, <%= current_user.name.capitalize%>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-ligth" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><%= link_to 'Minha Pagina', current_user, class:"dropdown-item"%></li>
+              <li><%= link_to 'Editar', "#", class:"dropdown-item"%></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to 'Sair', sair_path , method: :delete ,class:"dropdown-item"%></li>
+            </ul>
+          </li>
+      <% end %>
+    </ul>
 
   </div>
 </nav>
