@@ -3,6 +3,8 @@ class User < ApplicationRecord
     has_secure_password
   
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+
+    has_many :contacts
   
     validates :name, presence: true, length: { maximum: 50 }
     validates :password, length: { minimum: 6 }

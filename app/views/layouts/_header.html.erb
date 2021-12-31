@@ -21,8 +21,8 @@
              Olá, <%= current_user.name.capitalize%>
             </button>
             <ul class="dropdown-menu dropdown-menu-ligth" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><%= link_to 'Minha Pagina', current_user, class:"dropdown-item"%></li>
-              <li><%= link_to 'Editar', "#", class:"dropdown-item"%></li>
+              <li><%= link_to 'Minha Pagina', contacts_path, class:"dropdown-item"%></li>
+              <li><%= link_to 'Editar', edit_user_path(current_user), class:"dropdown-item"%></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to 'Sair', sair_path , method: :delete ,class:"dropdown-item"%></li>
             </ul>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :require_logged_in_user, only: %i[:edit, :update]
     
     def new
         @user = User.new
@@ -14,6 +15,19 @@ class UsersController < ApplicationController
             redirect_to root_path
         else
             render 'new'
+        end
+    end
+
+    def edit
+        
+    end
+
+    def update
+        if current_user.update(user_params)
+            flash[:sucess] = "Usuário atualizado com sucesso"
+            redirect_to contacts_path
+        else
+            render 'edit'
         end
     end
 
